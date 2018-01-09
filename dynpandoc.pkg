@@ -1,0 +1,13 @@
+v 1
+d dynpandoc: creating dynamic document using {bf:dynamic tags} and {bf:pandoc}   
+d {bf:Hua Peng}
+d After installation, see help {bf:dynpandoc}.
+d
+d Distribution-Date: 01jan2018
+d
+d Support: email hpeng01016@yahoo.com
+f dynpandoc.ado
+f dynpandoc.sthlp
+f stpandoc.ado
+f stpandoc.sthlp
+f empty.
