@@ -104,12 +104,8 @@ for details of supported formats.
 {marker examples}{...}
 {title:Examples}
 
-{pstd}
-Convert {it:dynpandoc_ex1.smd} to {it:dynpandoc_ex1.html}. 
-{phang2}{cmd:. dynpandoc dynpandoc_ex1.smd, saving(dynpandoc_ex1.html)}
+{pstd}Convert {it:example.smd} to {it:example.html}.{p_end} 
+{phang2}{cmd:. dynpandoc example.smd, saving(example.html)}{p_end}
 
-{pstd}
-Convert {it:dynpandoc_ex1.smd} to {it:dynpandoc_ex1.docx}. 
-{phang2}{cmd:. dynpandoc dynpandoc_ex1.smd, saving(dynpandoc_ex1.docx) to(docx)}
-
-{p_end}
+{pstd}Convert {it:example.smd} to {it:example.docx}.{p_end} 
+{phang2}{cmd:. dynpandoc example.smd, saving(example.docx) to(docx)}{p_end}

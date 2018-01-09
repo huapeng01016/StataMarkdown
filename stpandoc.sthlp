@@ -99,12 +99,8 @@ for details of supported formats.
 {marker examples}{...}
 {title:Examples}
 
-{pstd}
-Convert {it:stpandoc_ex1.md} to {it:stpandoc_ex1.html}. 
-{phang2}{cmd:. stpandoc stpandoc_ex1.md, saving(stpandoc_ex1.html)}
+{pstd}Convert {it:example.md} to {it:example.html}.{p_end} 
+{phang2}{cmd:. stpandoc example.md, saving(example.html)}{p_end}
 
-{pstd}
-Convert {it:stpandoc_ex1.md} to {it:stpandoc_ex1.docx}. 
-{phang2}{cmd:. stpandoc stpandoc_ex1.md, saving(stpandoc_ex1.docx) to(docx)}
-
-{p_end}
+{pstd}Convert {it:example.md} to {it:example.docx}.{p_end}
+{phang2}{cmd:. stpandoc example.md, saving(example.docx) to(docx)}{p_end}
