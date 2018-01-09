@@ -1,0 +1,3 @@
+v 1
+d Hua Peng https://github.com/huapeng01016/
+p dynpandoc Stata dynamic document processing with {bf:pandoc} 
