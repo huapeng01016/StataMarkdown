@@ -55,17 +55,9 @@ di in error "target file can not be the same as the source file"
 			local to = "html"
 		}
 	}
-
-    tempfile tmpfile		
-	if (strlower("`to'") == "pdf") {
-		local tmpfile = "`tmpfile'.pdf"	
-		local to = "latex"
-	}
 	
-	local execmd = `"`cmd' `srcfile' -s -o `tmpfile' -f `from' -t `to' `pargs'"'
+	local execmd = `"`cmd' `srcfile' -s -o "`destfile'" -f `from' -t `to' `pargs'"'
 	qui shell `execmd'	
-	qui copy "`tmpfile'" "`destfile'", replace
-	cap erase "`tmpfile'"
 	
     if ("`msg'" == "") {
 		if(substr("`destfile'", 1, 1)=="/") {

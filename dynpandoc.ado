@@ -37,11 +37,9 @@ program dynpandoc
 			`stop' 
 
 	tempfile mlogfile
-	if ("`to'" == "") {
-		local tmpsuf = ""
-		mata:get_file_suffix(`"`destfile'"', "tmpsuf")
-		mata:(void)pathchangesuffix("`mlogfile'", "`tmpsuf'", "mlogfile", 0)					
-	}
+	local tmpsuf = ""
+	mata:get_file_suffix(`"`destfile'"', "tmpsuf")
+	mata:(void)pathchangesuffix("`mlogfile'", "`tmpsuf'", "mlogfile", 0)					
 	
 	qui copy "`destfile'" `"`mlogfile'"'
 	cap noi stpandoc `mlogfile', /// 
