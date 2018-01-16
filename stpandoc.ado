@@ -1,4 +1,4 @@
-*! version 1.0.0  03jan2018
+*! version 1.0.1  15jan2018
 
 program stpandoc
 	version 15
