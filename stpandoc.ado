@@ -70,11 +70,19 @@ di in error "{bf:stpandoc} must use {pf:latex} or {pf:beamer} to generate {bf:pd
 		exit 602						
 		}
 	}
+
+	tempfile mlogfile
+	local tmpsuf = ""
+	mata:get_file_suffix(`"`destfile'"', "tmpsuf")
+	mata:(void)pathchangesuffix("`mlogfile'", "`tmpsuf'", "mlogfile", 0)					
 	
-	local execmd = `"`cmd' `srcfile' -s -o "`destfile'" -f `from' -t `to' `pargs'"'
+	local execmd = `"`cmd' `srcfile' -s -o "`mlogfile'" -f `from' -t `to' `pargs'"'
 	qui shell `execmd'	
-	
-    if ("`msg'" == "") {
+
+	confirm file "`mlogfile'"
+	qui copy `"`mlogfile'"' "`destfile'", replace	
+    
+	if ("`msg'" == "") {
 		if(substr("`destfile'", 1, 1)=="/") {
 			local flink = subinstr("file:`destfile'", " ", "%20", .)			
 		}
