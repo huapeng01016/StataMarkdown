@@ -91,7 +91,7 @@ void get_file_suffix(string scalar file, string scalar out)
 	string scalar suf
 	
 	suf = pathsuffix(file)
-	subinstr(suf, ".", "", 1)
+	suf = subinstr(suf, ".", "", 1)
 	st_local(out, suf)
 }
 
