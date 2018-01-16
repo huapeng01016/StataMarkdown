@@ -55,6 +55,21 @@ di in error "target file can not be the same as the source file"
 			local to = "html"
 		}
 	}
+
+	local tmpsuf = ""
+	mata:get_file_suffix(`"`destfile'"', "tmpsuf")
+	if (strlower("`tmpsuf'") == "pdf") {
+		if (strlower("`to'") == "pdf" | strlower("`to'") == "" | strlower("`to'") == "unknown") {
+			local to = "latex"			
+		}
+	}
+	
+	if (strlower("`to'") == "latex" | strlower("`to'") == "beamer") {
+		if (strlower("`tmpsuf'") != "pdf") {
+di in error "{bf:stpandoc} must use {pf:latex} or {pf:beamer} to generate {bf:pdf} file"
+		exit 602						
+		}
+	}
 	
 	local execmd = `"`cmd' `srcfile' -s -o "`destfile'" -f `from' -t `to' `pargs'"'
 	qui shell `execmd'	
@@ -71,6 +86,15 @@ di in smcl `"successfully converted {browse "`destfile'"}"'
 end
 
 mata:
+void get_file_suffix(string scalar file, string scalar out)
+{
+	string scalar suf
+	
+	suf = pathsuffix(file)
+	subinstr(file, ".", "", 1)
+	st_local(out, suf)
+}
+
 string scalar _find_markup_format(string scalar file)
 {
 	string scalar suff

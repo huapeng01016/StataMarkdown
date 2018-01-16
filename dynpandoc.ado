@@ -38,7 +38,7 @@ program dynpandoc
 
 	tempfile mlogfile
 	local tmpsuf = ""
-	mata:get_file_suffix(`"`destfile'"', "tmpsuf")
+	mata:get_file_suffix(`"`srcfile'"', "tmpsuf")
 	mata:(void)pathchangesuffix("`mlogfile'", "`tmpsuf'", "mlogfile", 0)					
 	
 	qui copy "`destfile'" `"`mlogfile'"'
