@@ -1,4 +1,4 @@
-*! version 1.0.1  15jan2018
+*! version 1.0.3  15jan2018
 program dynpandoc
 	version 15
 	

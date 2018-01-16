@@ -1,4 +1,4 @@
-*! version 1.0.1  15jan2018
+*! version 1.0.3  15jan2018
 
 program stpandoc
 	version 15
@@ -81,6 +81,7 @@ di in error "{bf:stpandoc} must use {pf:latex} or {pf:beamer} to generate {bf:pd
 
 	confirm file "`mlogfile'"
 	qui copy `"`mlogfile'"' "`destfile'", replace	
+	qui cap erase "`mlogfile'"
     
 	if ("`msg'" == "") {
 		if(substr("`destfile'", 1, 1)=="/") {
