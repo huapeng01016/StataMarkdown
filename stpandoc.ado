@@ -76,7 +76,7 @@ di in error "{bf:stpandoc} must use {pf:latex} or {pf:beamer} to generate {bf:pd
 	mata:get_file_suffix(`"`destfile'"', "tmpsuf")
 	mata:(void)pathchangesuffix("`mlogfile'", "`tmpsuf'", "mlogfile", 0)					
 	
-	local execmd = `"`cmd' `srcfile' -s -o "`mlogfile'" -f `from' -t `to' `pargs'"'
+	local execmd = `"`cmd' `srcfile' -f `from' -t `to' -s -o "`mlogfile'" `pargs'"'
 	qui shell `execmd'	
 
 	confirm file "`mlogfile'"
