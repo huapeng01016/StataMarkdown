@@ -4,9 +4,9 @@
 markup format to another. It also process Stata's **dynamic tags** to run Stata 
 commands, include Stata results, outputs, and graphs.
   
-## Examples
+## a dynamic document
 
-To produce html file [ex1.html](examples/ex1.html) from markdown file [ex1.md](examples/ex1.md):
+###To produce html file [ex1.html](examples/ex1.html) from markdown file [ex1.md](examples/ex1.md):
 
 ```
 dynpandoc ex1.md, replace pargs("--self-contained")
@@ -15,13 +15,13 @@ dynpandoc ex1.md, replace pargs("--self-contained")
 Note the "--self-contained" is a **pandoc** option to produce a standalone HTML file with no external 
 dependencies. 
 
-To produce docx file [ex1.docx](examples/ex1.docx) from markdown file [ex1.md](examples/ex1.md):
+###To produce docx file [ex1.docx](examples/ex1.docx) from markdown file [ex1.md](examples/ex1.md):
 
 ```
 dynpandoc ex1.md, sav(ex1.docx) replace
 ```
 
-To produce pdf file [ex1.pdf](examples/ex1.pdf) from markdown file [ex1.md](examples/ex1.md):
+###To produce pdf file [ex1.pdf](examples/ex1.pdf) from markdown file [ex1.md](examples/ex1.md):
 
 ```
 dynpandoc ex1.md, sav(ex1.pdf) replace
@@ -29,3 +29,10 @@ dynpandoc ex1.md, sav(ex1.pdf) replace
 
 Note that **LaTex** must be installed to generate **pdf** file.
 
+## a dynamic slide show
+
+###To produce html slide deck [sd.html](examples/sd.html) from markdown file [sd.md](examples/sd.md) using **slidy**:
+
+```
+dynpandoc sd.md, sav(sd.html) to(slidy) replace pargs("--self-contained")
+```
