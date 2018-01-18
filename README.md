@@ -4,15 +4,13 @@
 markup format to another. It also process Stata's **dynamic tags** to run Stata 
 commands, include Stata results, outputs, and graphs.
   
-## A dynamic document [ex1.md](examples/ex1.md)
+## A dynamic document [example1.md](examples/example1.md)
 
-### Produce html file:
+### Produce html file [ex1.html](examples/ex1.html):
 
 ```
-dynpandoc ex1.md, replace pargs("--self-contained")
+dynpandoc example1.md, replace pargs("--self-contained")
 ```
-
-produces a html file [ex1.html](examples/ex1.html).
 
 Note that "--self-contained" is a **pandoc** option to produce a standalone HTML file with no external 
 dependencies. 
@@ -20,32 +18,30 @@ dependencies.
 ### Produce docx file [ex1.docx](examples/ex1.docx):
 
 ```
-dynpandoc ex1.md, sav(ex1.docx) replace
+dynpandoc example1.md, sav(ex1.docx) replace
 ```
 
 
 ### Produce pdf file [ex1.pdf](examples/ex1.pdf):
 
 ```
-dynpandoc ex1.md, sav(ex1.pdf) replace
+dynpandoc example1.md, sav(ex1.pdf) replace
 ```
 
 Note that **LaTex** must be installed to generate **pdf** file.
 
-## A dynamic document with Stata estimation results [ex2.md](examples/ex2.md) 
+## A dynamic document with Stata estimation results [example2.md](examples/example2.md) 
 
-### Produce html file:
+### Produce html file [ex2.html](examples/ex2.html):
 
 ```
-dynpandoc ex2.md, replace pargs("--self-contained")
+dynpandoc example2.md, replace pargs("--self-contained")
 ```
-
-produces a html file [ex2.html](examples/ex2.html).
 
 ### Produce docx file [ex2.docx](examples/ex2.docx):
 
 ```
-dynpandoc ex2.md, sav(ex2.docx) replace
+dynpandoc example2.md, sav(ex2.docx) replace
 ```
 
 Note in the default settings, the estimation table lines are wrapped in the generated 
@@ -53,7 +49,7 @@ Note in the default settings, the estimation table lines are wrapped in the gene
 [reference.docx](examples/reference.docx) to set the margin size to be narrow.
  
 ```
-dynpandoc ex2.md, sav(ex2better.docx) pargs("--reference-doc=reference.docx") replace
+dynpandoc example2.md, sav(ex2better.docx) pargs("--reference-doc=reference.docx") replace
 ```
  
 There are no wrapped lines in the generated [ex2better.docx](examples/ex2better.docx)  
@@ -61,10 +57,10 @@ You may use reference.docx to change the styles of other elements in the docx fi
 for example, Body Text, First Paragraph, Title, Subtitle, Headings, etc. See 
 the **docx** section in [pandoc documentation](https://pandoc.org/MANUAL.html) for details.   
  
-## A dynamic slide show [sd.md](examples/sd.md)
+## A dynamic slide show [slide1.md](examples/slide1.md)
 
 ### Produce html slide deck [sd.html](examples/sd.html) using **slidy**:
 
 ```
-dynpandoc sd.md, sav(sd.html) to(slidy) replace pargs("--self-contained")
+dynpandoc slide1.md, sav(sd.html) to(slidy) replace pargs("--self-contained")
 ```
