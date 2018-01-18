@@ -12,7 +12,7 @@ commands, include Stata results, outputs, and graphs.
 dynpandoc ex1.md, replace pargs("--self-contained")
 ```
 
-Note the "--self-contained" is a **pandoc** option to produce a standalone HTML file with no external 
+Note that "--self-contained" is a **pandoc** option to produce a standalone HTML file with no external 
 dependencies. 
 
 ### Produce docx file [ex1.docx](examples/ex1.docx):
