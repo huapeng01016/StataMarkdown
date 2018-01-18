@@ -21,6 +21,7 @@ dependencies.
 dynpandoc ex1.md, sav(ex1.docx) replace
 ```
 
+
 ### Produce pdf file [ex1.pdf](examples/ex1.pdf):
 
 ```
@@ -29,6 +30,33 @@ dynpandoc ex1.md, sav(ex1.pdf) replace
 
 Note that **LaTex** must be installed to generate **pdf** file.
 
+## A dynamic document [ex2.md](examples/ex2.md) with Stata estimation results 
+
+### Produce html file [ex2.html](examples/ex2.html):
+
+```
+dynpandoc ex2.md, replace pargs("--self-contained")
+```
+
+### Produce docx file [ex2.docx](examples/ex2.docx):
+
+```
+dynpandoc ex2.md, sav(ex2.docx) replace
+```
+
+Note in the default settings, the estimation table lines are wrapped in the generated 
+[ex2.docx](examples/ex2.docx). We can solve the problem by using a 
+[reference.docx](examples/reference.docx) to set the margin size to be narrow.
+ 
+```
+dynpandoc ex2.md, sav(ex2better.docx) pargs("--reference-doc=reference.docx") replace
+```
+ 
+There are no wrapped lines in the generated [ex2better.docx](examples/ex2better.docx)  
+You may use reference.docx to change the styles of other elements in the docx file, 
+for example, Body Text, First Paragraph, Title, Subtitle, Headings, etc. See 
+the **docx** section in [pandoc documentation](https://pandoc.org/MANUAL.html) for details.   
+ 
 ## A dynamic slide show [sd.md](examples/sd.md)
 
 ### Produce html slide deck [sd.html](examples/sd.html) using **slidy**:
