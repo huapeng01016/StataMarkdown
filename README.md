@@ -30,7 +30,7 @@ dynpandoc ex1.md, sav(ex1.pdf) replace
 
 Note that **LaTex** must be installed to generate **pdf** file.
 
-## A dynamic document [ex2.md](examples/ex2.md) with Stata estimation results 
+## A dynamic document with Stata estimation results  [ex2.md](examples/ex2.md) 
 
 ### Produce html file [ex2.html](examples/ex2.html):
 
