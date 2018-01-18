@@ -6,11 +6,13 @@ commands, include Stata results, outputs, and graphs.
   
 ## A dynamic document [ex1.md](examples/ex1.md)
 
-### Produce html file [ex1.html](examples/ex1.html):
+### Produce html file:
 
 ```
 dynpandoc ex1.md, replace pargs("--self-contained")
 ```
+
+produces a html file [ex1.html](examples/ex1.html).
 
 Note that "--self-contained" is a **pandoc** option to produce a standalone HTML file with no external 
 dependencies. 
@@ -32,12 +34,13 @@ Note that **LaTex** must be installed to generate **pdf** file.
 
 ## A dynamic document with Stata estimation results [ex2.md](examples/ex2.md) 
 
-
-### Produce html file [ex2.html](examples/ex2.html):
+### Produce html file:
 
 ```
 dynpandoc ex2.md, replace pargs("--self-contained")
 ```
+
+produces a html file [ex2.html](examples/ex2.html).
 
 ### Produce docx file [ex2.docx](examples/ex2.docx):
 
