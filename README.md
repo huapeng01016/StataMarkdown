@@ -1,3 +1,7 @@
+Title:	dynpandoc readme  
+Author: Hua Peng	
+Date:	18jan2005  
+
 # dynpandoc
 
 **dynpandoc** combines Stata's **dyntext** with **pandoc** to convert a file in one 
@@ -9,7 +13,7 @@ commands, include Stata results, outputs, and graphs.
 ### Produce html file [ex1.html](examples/ex1.html):
 
 ```
-dynpandoc example1.md, replace pargs("--self-contained")
+dynpandoc example1.md, sav(ex1.html) replace pargs("--self-contained")
 ```
 
 Note that "--self-contained" is a **pandoc** option to produce a standalone HTML file with no external 
@@ -35,7 +39,7 @@ Note that **LaTex** must be installed to generate **pdf** file.
 ### Produce html file [ex2.html](examples/ex2.html):
 
 ```
-dynpandoc example2.md, replace pargs("--self-contained")
+dynpandoc example2.md, sav(ex2.html) replace pargs("--self-contained")
 ```
 
 ### Produce docx file [ex2.docx](examples/ex2.docx):
