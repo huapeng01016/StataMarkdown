@@ -1,6 +1,6 @@
-Title:	dynpandoc readme  
-Author: Hua Peng	
-Date:	18jan2005  
+% Title:  dynpandoc readme  
+% Author: Hua Peng  	
+% Date:	  18jan2005    
 
 # dynpandoc
 
