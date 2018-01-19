@@ -1,7 +1,3 @@
-% Title:  dynpandoc readme  
-% Author: Hua Peng  	
-% Date:	  18jan2005    
-
 # dynpandoc
 
 **dynpandoc** combines Stata's **dyntext** with **pandoc** to convert a file in one 
