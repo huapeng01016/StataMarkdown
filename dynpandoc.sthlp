@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.0.0  01jan2018}{...}
+{* *! version 1.0.1  22jan2018}{...}
 {vieweralsosee "stpandoc" "help stpandoc"}{...}
 {vieweralsosee "" "--"}{...}
 {vieweralsosee "[P] markdown" "mansection P markdown"}{...}
@@ -34,10 +34,10 @@ be saved{p_end}
 {synopt :{opt rep:lace}}replace the target file if it already exists{p_end}
 {synopt :{opt nomsg}}suppress message of a link to {it:targetfile}{p_end}
 {synopt :{opt nostop}}do not stop when an error occurs{p_end}
-{synopt :{opt from}}specify the markup format of {it:srcfile}{p_end}
-{synopt :{opt to}}specify the markup format of {it:targetfile}{p_end}
-{synopt :{opt path}}specify the directory where the {bf:pandoc} executable is located{p_end}
-{synopt :{opt pargs}}specify the extra arguments for {bf:pandoc}{p_end}
+{synopt :{opt from(markup_format)}}specify the markup format of {it:srcfile}{p_end}
+{synopt :{opt to(markup_format)}}specify the markup format of {it:targetfile}{p_end}
+{synopt :{opt path(path)}}specify the directory where the {bf:pandoc} executable is located{p_end}
+{synopt :{opt pargs(extra_args)}}specify the extra arguments for {bf:pandoc}{p_end}
 {synoptline}
 {p2colreset}{...}
 {p 4 6 2}* {opt saving(targetfile)} is required.
@@ -69,16 +69,16 @@ format with dynamic tags replaced with Stata results, outputs, and graphs.
 occurs.  
 
 {phang}
-{opt from} specifies the markup format of the {it:srcfile}.
+{opt from(markup_format)} specifies the markup format of the {it:srcfile}.
 
 {phang}
-{opt to} specifies the markup format of the {it:targetfile}.
+{opt to(markup_format)} specifies the markup format of the {it:targetfile}.
 
 {phang}
-{opt path} specifies the directory where the {bf:pandoc} executable is located.
+{opt path(path)} specifies the directory where the {bf:pandoc} executable is located.
 
 {phang}
-{opt pargs} specifies the extra arguments for {bf:pandoc}.
+{opt pargs(extra_args)} specifies the extra arguments for {bf:pandoc}.
 
 {marker remarks}{...}
 {title:Remarks}

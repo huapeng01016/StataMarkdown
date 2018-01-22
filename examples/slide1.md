@@ -25,5 +25,5 @@ For every unit increase in displacement, a <<dd_display:%9.4f eb[1,1]>> unit inc
 scatter weight displacement, mcolor(%30)
 <</dd_do>>
 
-<<dd_graph: sav(gr1.png) replace markdown>>
+<<dd_graph: sav(gr1.svg) replace markdown>>
 
