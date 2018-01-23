@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.0.1  22jan2018}{...}
+{* *! version 1.0.2  22jan2018}{...}
 {vieweralsosee "stpandoc" "help stpandoc"}{...}
 {vieweralsosee "" "--"}{...}
 {vieweralsosee "[P] markdown" "mansection P markdown"}{...}
@@ -101,6 +101,15 @@ generate {bf:pdf} output which requires a {bf:LaTex} process engine.  See
 {browse "https://pandoc.org/MANUAL.html#general-options": pandoc options} 
 for details of supported formats.
 
+{pstd}
+{cmd:dynpandoc} calls {bf:stpandoc} which calls {bf:pandoc} using {cmd:shell} command.  
+On Mac OS X, since the applications launched from Finder do not respect the {bf:$PATH} 
+environment variable set by .bash_profile, Stata launched from Finder usually will not 
+be able to locate {bf:pandoc} even it is installed in the usual place as 
+{bf:/usr/local/bin/pandoc}.  You may use the {opt:path} to specify the location of the 
+{bf:pandoc} if it can not be located through {cmd:shell}.  
+
+
 {marker examples}{...}
 {title:Examples}
 
@@ -109,3 +118,7 @@ for details of supported formats.
 
 {pstd}Convert {it:example.smd} to {it:example.docx}.{p_end} 
 {phang2}{cmd:. dynpandoc example.smd, saving(example.docx) to(docx)}{p_end}
+
+{pstd}Several complete examples with source files can be found at 
+{browse "https://huapeng01016.github.io/StataMarkdown/": dynpandoc github page}.
+ 
