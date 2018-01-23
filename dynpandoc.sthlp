@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.0.2  22jan2018}{...}
+{* *! version 1.0.3  22jan2018}{...}
 {vieweralsosee "stpandoc" "help stpandoc"}{...}
 {vieweralsosee "" "--"}{...}
 {vieweralsosee "[P] markdown" "mansection P markdown"}{...}
@@ -106,7 +106,7 @@ for details of supported formats.
 On Mac OS X, since the applications launched from Finder do not respect the {bf:$PATH} 
 environment variable set by .bash_profile, Stata launched from Finder usually will not 
 be able to locate {bf:pandoc} even it is installed in the usual place as 
-{bf:/usr/local/bin/pandoc}.  You may use the {opt:path} to specify the location of the 
+{bf:/usr/local/bin/pandoc}.  You may use the {opt path(path)} to specify the location of the 
 {bf:pandoc} if it can not be located through {cmd:shell}.  
 
 

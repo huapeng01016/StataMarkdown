@@ -15,6 +15,15 @@ dynpandoc example1.md, sav(ex1.html) replace pargs("--self-contained")
 Note that "--self-contained" is a **pandoc** option to produce a standalone HTML file with no external 
 dependencies. 
 
+On Mac OS X:
+
+```
+dynpandoc example1.md, sav(ex1.html) replace pargs("--self-contained") path(/usr/local/bin/pandoc)
+```
+
+if **pandoc** is installed at /usr/local/bin and can not be located through Stata's **shell** command.
+
+
 ### Produce docx file [ex1.docx](examples/ex1.docx):
 
 ```

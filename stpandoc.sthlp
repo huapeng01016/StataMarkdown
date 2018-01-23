@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.0.2  22jan2018}{...}
+{* *! version 1.0.3  22jan2018}{...}
 {vieweralsosee "dynpandoc" "help dynpandoc"}{...}
 {vieweralsosee "" "--"}{...}
 {vieweralsosee "[P] markdown" "mansection P markdown"}{...}
@@ -86,7 +86,7 @@ be saved{p_end}
 applications launched from Finder do not respect the {bf:$PATH} environment variable 
 set by .bash_profile, Stata launched from Finder usually will not be able to locate 
 {bf:pandoc} even it is installed in the usual place as {bf:/usr/local/bin/pandoc}.  You 
-may use the {opt:path} to specify the location of the {bf:pandoc} if it can not be located 
+may use the {opt path(path)} to specify the location of the {bf:pandoc} if it can not be located 
 through {cmd:shell}.  
 
 {pstd}
