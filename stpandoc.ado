@@ -1,4 +1,4 @@
-*! version 1.0.3  15jan2018
+*! version 1.0.4  22jan2018
 
 program stpandoc
 	version 15
@@ -62,12 +62,9 @@ di in error "target file can not be the same as the source file"
 		if (strlower("`to'") == "pdf" | strlower("`to'") == "" | strlower("`to'") == "unknown") {
 			local to = "latex"			
 		}
-	}
-	
-	if (strlower("`to'") == "latex" | strlower("`to'") == "beamer") {
-		if (strlower("`tmpsuf'") != "pdf") {
-di in error "{bf:stpandoc} must use {pf:latex} or {pf:beamer} to generate {bf:pdf} file"
-		exit 602						
+		if (strlower("`to'") != "latex" & strlower("`to'") != "beamer") {
+di in error "{bf:stpandoc} must use {bf:latex} or {bf:beamer} to generate {bf:pdf} file"
+			exit 602						
 		}
 	}
 
