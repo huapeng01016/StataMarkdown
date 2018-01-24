@@ -40,7 +40,7 @@ dynpandoc example1.md, sav(ex1.pdf) replace
 Note that **LaTex** must be installed to generate **pdf** file.
 
 On Mac OS X, **pdflatex** may not be found in the **PATH** from Stata launched shell.
-In that case, launching Stata from terminal may solve the problem. For a older version
+In that case, launching Stata from terminal may solve the problem. For an older version
 of **pandoc** which supports option --latex-engine, you may use pargs(--latex-engine=fullpath).
 For the latest **pandoc**, although the documentation suggests that you may specify full 
 path in the --pdf-engine option, it does not seem to work.
