@@ -67,7 +67,8 @@ Note in the default settings, the estimation table lines are wrapped in the gene
 dynpandoc example2.md, sav(ex2better.docx) pargs("--reference-doc=reference.docx") replace
 ```
  
-There are no wrapped lines in the generated [ex2better.docx](examples/ex2better.docx)  
+There are no wrapped lines in the generated [ex2better.docx](examples/ex2better.docx).
+  
 You may use reference.docx to change the styles of other elements in the docx file, 
 for example, Body Text, First Paragraph, Title, Subtitle, Headings, etc. See 
 the **docx** section in [pandoc documentation](https://pandoc.org/MANUAL.html) for details.   
