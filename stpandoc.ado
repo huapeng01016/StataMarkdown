@@ -1,5 +1,7 @@
-*! version 1.0.4  22jan2018
+*! version 1.1.0  8may2018
+*! modified by Doug Hemken
 
+capture program drop stpandoc
 program stpandoc
 	version 15
 	
@@ -10,13 +12,14 @@ program stpandoc
 				to(string)			///
 				path(string)		///
 				pargs(string asis)	///
+				PERRor    			///
 				]
 
 	tokenize `"`anything'"'
 	local srcfile `"`1'"'
 	local fn2 `"`2'"'
 	if ("`fn2'"!="") {
-		di "invalid syntax"
+		di `"{error: invalid syntax}: {it:`fn2'}"'
 		exit 198
 	}
 	confirm file `"`srcfile'"'
@@ -68,14 +71,31 @@ di in error "{bf:stpandoc} must use {bf:latex} or {bf:beamer} to generate {bf:pd
 		}
 	}
 
+	if ("`perror'" ~= "" ) {
+		tempfile stderr
+		local perror 2> `stderr'
+	}
+
 	tempfile mlogfile
 	local tmpsuf = ""
 	mata:get_file_suffix(`"`destfile'"', "tmpsuf")
 	mata:(void)pathchangesuffix("`mlogfile'", "`tmpsuf'", "mlogfile", 0)					
+	local execmd = `" "`cmd'" `srcfile' -f `from' -t `to' -s -o "`mlogfile'" `pargs'"'
+	qui shell `execmd' `perror'
 	
-	local execmd = `"`cmd' `srcfile' -f `from' -t `to' -s -o "`mlogfile'" `pargs'"'
-	qui shell `execmd'	
-
+	if ("`perror'" ~= "") {
+		mata: (void)not_empty("`stderr'")
+		if ("`r(not_empty)'" == "1") {
+			display "{error: Pandoc error:}"
+			display `"`execmd'"'
+			type "`stderr'"
+			exit
+			}
+		else {
+			display "(no Pandoc error)"
+			display
+			}
+		}
 	confirm file "`mlogfile'"
 	qui copy `"`mlogfile'"' "`destfile'", replace	
 	qui cap erase "`mlogfile'"
@@ -139,6 +159,18 @@ void find_markup_format(string scalar file, string scalar out)
 	fmt = _find_markup_format(file)
 	st_local(out, fmt)
 }
+
+real scalar not_empty(string scalar stderr) {
+	Y=docread(stderr)
+	if (rows(Y)) {
+		rc=1
+		}
+		else {
+		rc=0
+		}
+	st_global("r(not_empty)", strofreal(rc))
+	return(rc)
+	}
 end
 
 exit

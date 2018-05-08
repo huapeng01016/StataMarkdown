@@ -37,6 +37,7 @@ be saved{p_end}
 {synopt :{opt to(markup_format)}}specify the markup format of {it:targetfile}{p_end}
 {synopt :{opt path(path)}}specify the directory where the {bf:pandoc} executable is located{p_end}
 {synopt :{opt pargs(extra_args)}}specify the extra arguments for {bf:pandoc}{p_end}
+{synopt :{opt perr:or}}capture and display any {bf:pandoc} errors{p_end}
 {synoptline}
 {p2colreset}{...}
 {p 4 6 2}* {opt saving(targetfile)} is required.
@@ -72,6 +73,9 @@ be saved{p_end}
 
 {phang}
 {opt pargs(extra_args)} specifies the extra arguments for {bf:pandoc}.
+
+{phang}
+{opt perror} captures and displays any errors from {bf:pandoc}.
 
 {marker remarks}{...}
 {title:Remarks}
